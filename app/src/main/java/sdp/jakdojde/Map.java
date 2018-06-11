@@ -40,13 +40,18 @@ public class Map extends FragmentActivity implements OnMapReadyCallback, Subject
     private static final int LOCATION_REQUEST = 500;
     ArrayList<LatLng> listPoints;
     private int ilePunktowPosrednich = 100;
-    private ArrayList<ConcreteObserver> observers;
+    private ArrayList<ConcreteObserver> observers = new ArrayList<>();
+
     private String distance;
     public double dystans = 0;
     public String clear = "clear";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ConcreteObserver observer1 = new ConcreteObserver();
+        observers.add(observer1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
